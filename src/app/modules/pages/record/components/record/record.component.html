@@ -1,0 +1,33 @@
+<div
+  appIsFullscreen
+  [activeClass]="'record-fullscreen'"
+  appIsIframe
+  class="record-container"
+>
+  <div class="sidebar"
+       appIsFullscreen
+       [activeClass]="'sidebar-fullscreen'"
+  >
+    <div class="actions">
+      <button class="git-action" (click)="openGitRepo()"><img src="./assets/img/githubWhite.svg" alt="git"></button>
+      <button class="file-tree-action active"><img src="assets/img/openedFolderWhite.svg" alt="folder"></button>
+    </div>
+    <div class="file-tree-section">
+      <div class="title">
+        <span>Folder tree</span>
+      </div>
+      <div class="file-tree">
+      </div>
+    </div>
+  </div>
+  <div class="workspace">
+    <lib-lc-module-player
+      [parentType]="'web-player'"
+      [showControls]="mouseOnDocument"
+      [recordLink]="recordLink"
+      [changeStateOfFullScreen]="changeStateOfFullScreen"
+      (isFullscreen)="fullScreenHandler($event)"
+      (gitHubLink)="gitHubLinkHandler($event)"
+    ></lib-lc-module-player>
+  </div>
+</div>

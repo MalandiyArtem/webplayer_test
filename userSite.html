@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .frame {
+      margin: 100px auto;
+      width: 802px;
+      height: 451px;
+    }
+  </style>
+</head>
+<body>
+<div class="frame">
+  <iframe
+    title="Livecode player"
+    id="livecode"
+    src="https://lc-player.advantiss.tk?recordLink=https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Flc.club%2Fpublic%2Frecords%2F818ac025-3441-4848-a30b-6264d17589e7%2F818ac025-3441-4848-a30b-6264d17589e7-config.lc"
+    height="100%"
+    width="100%"
+    allowfullscreen
+    frameborder="0"
+  >
+  </iframe>
+</div>
+<script>
+  // Link to use in src for prod (if we don't need test page)
+  // https://lc-player.advantiss.tk?recordLink=https%3A%2F%2Fs3.eu-central-1.amazonaws.com%2Flc.club%2Fpublic%2Frecords%2F818ac025-3441-4848-a30b-6264d17589e7%2F818ac025-3441-4848-a30b-6264d17589e7-config.lc
+  (function () {
+    const child = document.getElementById('livecode');
+    child.onload = function () {
+      child.contentWindow.postMessage({
+        token: '123456',
+        // recordLink: 'https://s3.eu-central-1.amazonaws.com/lc.club/public/records/818ac025-3441-4848-a30b-6264d17589e7/818ac025-3441-4848-a30b-6264d17589e7-config.lc'
+      }, "*");
+    }
+  }());
+</script>
+</body>
+</html>
