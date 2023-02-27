@@ -1,11 +1,9 @@
-<div appIsIframe class="home-wrapper">
-  <div *ngIf="hasAccess; else noAccess" class="home">
     <div class="example">
       <span>Example: </span>
       <input
         type="text"
         disabled
-        value="https://s3.eu-central-1.amazonaws.com/lc.club/public/records/818ac025-3441-4848-a30b-6264d17589e7/818ac025-3441-4848-a30b-6264d17589e7-config.lc"
+        value="nothing"
       >
     </div>
     <form
@@ -18,21 +16,23 @@
         placeholder="Enter link to recording"
         type="text"
       >
+      <input 
+        type="text"
+        class="my_test_input"
+        value="Hello"
+      >
       <button
-        [disabled]="form.invalid"
-        type="submit"
-      >Join
+        type="button"
+        class="my_btn"
+        (click)="sayHi()"
+      >
+        Click me
       </button>
+
+      <span class="resulted_string">
+        {{ valueFromService }}
+      </span>
+
+
     </form>
   </div>
-  <div
-    [activeClass]="'active'" appControl
-    class="controller"
-  >
-    <app-fullscreen class="fullscreen"></app-fullscreen>
-  </div>
-</div>
-
-<ng-template #noAccess>
-  <h3>You don't have access to our module</h3>
-</ng-template>

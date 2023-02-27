@@ -7,11 +7,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class FullscreenService {
   private isFullScreen = new BehaviorSubject(false);
 
-  setIsFullScreen(state: boolean) {
-    this.isFullScreen.next(state);
-  }
-
-  getIsFullScreen() {
-    return this.isFullScreen as Observable<boolean>;
+  methodFromFullscreenService(someNumber: number) {
+    /**
+     * [This method just for test multiline comment]
+     * {I can add this}
+     * 'I can add that'
+     * And one more time
+     */
+    return someNumber + 123 * 12 + (35 - 10);
   }
 }
