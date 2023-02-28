@@ -16,7 +16,7 @@ export class MediaControlService {
   }
 
   // This is a simple comment
-  // Because I don't know what to write
+  // Because I don't know what to write 11111111111111111111111111111
 
   /**
    * This is the end of recording
